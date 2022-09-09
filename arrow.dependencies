@@ -1,0 +1,11 @@
+[
+  {
+    "remote": "gitlab",
+    "repository": "arrowos-project/android_vendor_asus_sake",
+    "target_path": "vendor/asus/sake"
+  },
+  {
+    "repository": "android_kernel_asus_sake",
+    "target_path": "kernel/asus/sake"
+  }
+]
