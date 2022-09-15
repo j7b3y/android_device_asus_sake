@@ -251,8 +251,13 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # NFC
-$(call inherit-product, vendor/nxp/nfc/nfc-vendor-product.mk)
-$(call inherit-product, vendor/nxp/secure_element/se-vendor-product.mk)
+$(call inherit-product, vendor/nxp/opensource/pn5xx/halimpl/nfc_vendor_product.mk)
+#$(call inherit-product, vendor/nxp/secure_element/se-vendor-product.mk)
+
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_eSE/android.hardware.nfc.ese.xml \
@@ -263,7 +268,7 @@ PRODUCT_USES_ESE := false
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    kernel/asus/sake
+    kernel/asus/sm8350
 
 # Networking
 PRODUCT_PACKAGES += \
