@@ -432,6 +432,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             break;
     }
 }
+
 } // namespace implementation
 }  // namespace V2_3
 }  // namespace fingerprint

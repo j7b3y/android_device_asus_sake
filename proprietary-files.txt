@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from ZenFone 8 (31.1010.0411.89). OTAs to extract from can be found here:
+## are from Zenfone 8 (33.0210.0210.210). OTAs to extract from can be found here:
 ## https://www.asus.com/Mobile/Phones/ZenFone/Zenfone-8/HelpDesk_BIOS/
 
 # ADSPRPC
@@ -282,10 +282,6 @@ vendor/lib/soundfx/libdiraceffect.so
 vendor/lib/libdiracgefwrapper.so
 
 # Bluetooth
-system_ext/app/aptxacu/aptxacu.apk
-system_ext/app/aptxui/aptxui.apk
-system_ext/etc/permissions/privapp-permissions-aptxals.xml
-system_ext/priv-app/aptxals/aptxals.apk
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -322,6 +318,10 @@ vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# Bluetooth (aptX) - from cheetah - TQ1A.230205.002
+system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
+system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
 # CNE
 vendor/app/CACertService/CACertService.apk
@@ -869,6 +869,7 @@ system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
 system_ext/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
