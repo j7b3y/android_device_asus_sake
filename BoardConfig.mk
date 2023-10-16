@@ -65,7 +65,7 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.sake
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := ASUS_I006D
+TARGET_BOOTLOADER_BOARD_NAME := lahaina
 
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -82,6 +82,11 @@ TARGET_SCREEN_DENSITY := 440
 # FSConfig
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Health
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/asuslib/charging_suspend
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/hidl/asus_framework_matrix.xml \
@@ -97,8 +102,8 @@ DEVICE_MANIFEST_FILE := \
 DEVICE_MATRIX_FILE := \
     $(DEVICE_PATH)/hidl/compatibility_matrix.xml
 
-#ODM_MANIFEST_SKUS := eSE
-#ODM_MANIFEST_ESE_FILES := $(DEVICE_PATH)/hidl/eSE_manifest.xml
+# ODM_MANIFEST_SKUS := eSE
+# ODM_MANIFEST_ESE_FILES := $(DEVICE_PATH)/hidl/eSE_manifest.xml
 
 # Hacks
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -118,7 +123,8 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     pcie_ports=compat \
     service_locator.enable=1 \
-    swiotlb=0
+    swiotlb=0 \
+    kpti=off
 
 BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     adsp_loader_dlkm.ko \
@@ -282,7 +288,6 @@ include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 
 # WLAN
 BOARD_WLAN_DEVICE := qcwcn

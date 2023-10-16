@@ -131,7 +131,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/privapp-permissions-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-asus-system.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
@@ -186,6 +185,7 @@ PRODUCT_PACKAGES += \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.lineage.livedisplay@2.0-service-sdm \
+    vendor.lineage.livedisplay@2.0-service.sake \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.mapper@1.1.vendor \
@@ -196,6 +196,10 @@ PRODUCT_PACKAGES += \
 # Fastboot
 PRODUCT_PACKAGES += \
     fastbootd
+
+# Fastcharge
+PRODUCT_PACKAGES += \
+    vendor.lineage.fastcharge@1.0-service.sake
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -234,6 +238,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.sake.rc \
     init.target.rc \
     ueventd.asus.rc \
     ueventd.qcom.rc
@@ -244,6 +249,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
+
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -322,9 +331,11 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Permissions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/hiddenapi-package-allowlist-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/asus-hiddenapi-package-allowlist.xml \
     $(LOCAL_PATH)/hiddenapi-package-allowlist-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/asus-hiddenapi-package-allowlist.xml \
     $(LOCAL_PATH)/privapp-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-asus.xml \
     $(LOCAL_PATH)/privapp-permissions-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-asus.xml
@@ -351,7 +362,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor
 
 # Security
-BOOT_SECURITY_PATCH := 2023-01-05
+BOOT_SECURITY_PATCH := 2023-05-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Sensors

@@ -310,7 +310,7 @@
     <string name="config_mms_user_agent" translatable="false">ZS590KS</string>
 
     <!-- MMS user agent profile URL -->
-    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprofile.asus.com/uaprof/ASUS-ZS590KS.xml</string>
+    <string name="config_mms_user_agent_profile_url" translatable="false">https://uaprofile.asus.com/uaprof/ASUS-ZS590KS.xml</string>
 
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
@@ -420,11 +420,5 @@
 
     <!-- Slow brightness animation ramp rate in brightness units per second -->
     <integer translatable="false" name="config_brightness_ramp_rate_slow">200</integer>
-
-    <!-- The list of packages to automatically opt out of refresh rates higher than 60hz because
-         of known compatibility issues. -->
-    <string-array name="config_highRefreshRateBlacklist">
-        <item>com.asus.camera</item>
-    </string-array>
 
 </resources>
